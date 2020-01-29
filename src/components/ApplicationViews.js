@@ -1,27 +1,32 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { TaskProvider } from "./tasks/TaskProvider"
+import { NewsProvider } from "./news/NewsProvider"
 
 
 export default () => {
     return (
         <>
-                  <Route exact path="/">
+            <Route exact path="/">
 
-                  </Route>
+            </Route>
 
-                  <Route exact path="/news">
+            <NewsProvider>
+                <Route exact path="/news">
 
-                  </Route>
+                </Route>
+            </NewsProvider>
 
-                  <Route exact path="/events">
+            <Route exact path="/events">
 
-                  </Route>
+            </Route>
 
-                  <Route exact path="/tasks">
 
-                  </Route>
-                
+            <TaskProvider>
+                <Route exact path="/tasks">
 
+                </Route>
+            </TaskProvider>
         </>
     )
 }
