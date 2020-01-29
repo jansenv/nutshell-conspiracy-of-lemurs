@@ -1,5 +1,6 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { TaskProvider } from "./tasks/TaskProvider"
 import { NewsProvider } from "./news/NewsProvider"
 
 
@@ -20,9 +21,11 @@ export default () => {
 
                   </Route>
 
-                  <Route exact path="/tasks">
 
+                  <TaskProvider>   
+                  <Route exact path="/tasks">
                   </Route>
+                    </TaskProvider>
 
 
         </>
