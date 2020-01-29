@@ -56,6 +56,7 @@ export const TaskProvider = (props) => {
 
     useEffect(() => {
         console.log("****  Task APPLICATION STATE CHANGED  ****")
+        
     }, [tasks])
 
 

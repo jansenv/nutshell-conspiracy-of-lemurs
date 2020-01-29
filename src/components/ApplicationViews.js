@@ -1,6 +1,6 @@
 import React from "react"
 import { Route } from "react-router-dom"
-
+import { TaskProvider } from "./tasks/TaskProvider"
 
 export default () => {
     return (
@@ -17,9 +17,11 @@ export default () => {
 
                   </Route>
 
-                  <Route exact path="/tasks">
 
+                  <TaskProvider>   
+                  <Route exact path="/tasks">
                   </Route>
+                    </TaskProvider>
 
 
         </>
