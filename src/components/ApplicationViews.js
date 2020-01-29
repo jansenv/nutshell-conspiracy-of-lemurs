@@ -1,11 +1,8 @@
 import React from "react"
 import { Route } from "react-router-dom"
-<<<<<<< HEAD
 import { TaskProvider } from "./tasks/TaskProvider"
-=======
 import { NewsProvider } from "./news/NewsProvider"
 
->>>>>>> master
 
 export default () => {
     return (
