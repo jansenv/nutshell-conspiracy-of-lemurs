@@ -37,6 +37,9 @@ export default (props) => {
         <Route exact path="/events/create"
           render={props => <EventForm {...props} />}
         />
+        <Route exact path="/events/edit/:eventId(\d+)"
+          render={props => <EventForm {...props} />}
+        />
       </EventProvider>
 
       <TaskProvider>
