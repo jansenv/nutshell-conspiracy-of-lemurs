@@ -95,7 +95,7 @@ export default props => {
                     </input>
                 </div>
             </fieldset>
-            {/* <fieldset>
+            <fieldset>
                 <div className="form-group">
                     <label htmlFor="completed">Completed ? </label>
                     <input type="checkbox" name="checkbox" className="form-control"
@@ -104,7 +104,7 @@ export default props => {
                         onChange={handleControlledInputChange}>
                     </input>
                 </div>
-            </fieldset> */}
+            </fieldset>
             <button type="submit"
                 onClick={evt => {
                     evt.preventDefault()

@@ -1,11 +1,31 @@
 //Authored by Willy
-import React, { useContext } from "react"
+import React, { useContext, useRef } from "react"
 import "./Task.css"
 import { TaskContext } from "./TaskProvider"
 
 export default ({ task, history }) => {
-    const { deleteTask } = useContext(TaskContext)
+    const { deleteTask, patchTask } = useContext(TaskContext)
 
+
+const checkbox = ()=>{
+    if(task.isCompleted === true){
+        return <input type="checkbox" name="checkbox" onChange={()=>{
+            const patchedTask= {
+                isCompleted:task.isCompleted,
+                id: task.id
+            }
+            patchTask(patchedTask).then(()=> history.push("/tasks"))
+        }} checked></input>
+    }else{
+        return <input type="checkbox" name="checkbox" onChange={()=>{
+            const patchedTask= {
+                isCompleted:task.isCompleted,
+                id: task.id
+            }
+            patchTask(patchedTask).then(()=> history.push("/tasks"))
+        }}></input>
+    }
+}
 
 return (
     
@@ -15,7 +35,11 @@ return (
         <div>{task.task}</div>
         <div>Due: {task.dueDate}</div>
         <label>Completed?</label>
-        <input type="checkbox" className={task.id}></input>
+        {checkbox()}
+        
+
+
+
 <button onClick={() => {
                 history.push(`/tasks/edit/${task.id}`)
             }}>Edit</button>

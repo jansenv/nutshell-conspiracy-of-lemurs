@@ -29,20 +29,17 @@ export default (props) => {
 
 
 
-                  <TaskProvider>   
-                  <Route exact path="/tasks" render={
-                      props=><TaskList {...props}/>
-                  }/>
-                  <Route exact path="/tasks/create" render={
-                      props=><TaskForm {...props}/>
-                  }/>
-                  <Route exact path="/tasks/edit/:taskId(\d+)" render={
-                      props=><TaskForm {...props}/>
-                  }/>
-                  
-                      
-                  
-                    </TaskProvider>
+            <TaskProvider>
+                <Route exact path="/tasks" render={
+                    props => <TaskList {...props} />
+                } />
+                <Route exact path="/tasks/create" render={
+                    props => <TaskForm {...props} />
+                } />
+                <Route exact path="/tasks/edit/:taskId(\d+)" render={
+                    props => <TaskForm {...props} />
+                } />
+            </TaskProvider>
 
 
         </>

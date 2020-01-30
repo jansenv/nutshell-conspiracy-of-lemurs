@@ -7,11 +7,9 @@ import "./Task.css"
 
 export default (props) =>{
   const { tasks } = useContext(TaskContext)
-  // console.log(employees)
-  localStorage.setItem("activeUser", 1)
 const yourTasks = tasks.filter(task => task.userId === parseInt(localStorage.getItem("activeUser")))
 const completedTasks = yourTasks.filter(task=>task.isCompleted === true)
-const tasksToDo = yourTasks.filter(task=>task.isCompleted ===false)
+const tasksToDo = yourTasks.filter(task=>task.isCompleted !==true)
  return (
     <div className="tasks">
         <div>
