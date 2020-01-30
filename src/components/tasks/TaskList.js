@@ -21,6 +21,8 @@ const tasksToDo = yourTasks.filter(task=>task.isCompleted ===false)
         </button>
 
         </div>
+        <div className="allTheTasks">
+
         <h2>Your Tasks</h2>
         <article className="taskList">
             {tasksToDo.map(tas => <Task key={tas.id} task={tas} {...props} />)}
@@ -30,6 +32,7 @@ const tasksToDo = yourTasks.filter(task=>task.isCompleted ===false)
         <article className="taskList">
             {completedTasks.map(tas => <Task key={tas.id} task={tas} {...props} />)}
         </article>
+        </div>
     </div>
 )
 }
