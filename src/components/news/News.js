@@ -1,3 +1,5 @@
+// Authored by Spencer Truett
+
 import React, { useContext } from "react"
 import { NewsContext } from "./NewsProvider"
 
