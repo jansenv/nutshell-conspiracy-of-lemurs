@@ -3,7 +3,7 @@ import { NewsContext } from "./NewsProvider"
 
 
 export default props => {
-    const { addNews, news, updateNews } = useContext(NewsContext)
+    const { addNews, NewsArray, updateNews } = useContext(NewsContext)
     const [news, setNews] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("newsId")
@@ -18,14 +18,14 @@ export default props => {
     const setDefaults = () => {
         if (editMode) {
             const newsId = parseInt(props.match.params.newsId)
-            const selectedNews = news.find(n => n.id === newsId) || {}
+            const selectedNews = NewsArray.find(n => n.id === newsId) || {}
             setNews(selectedNews)
         }
     }
 
     useEffect(() => {
         setDefaults()
-    }, [news])
+    }, [NewsArray])
 
     const createNewNews = () => {
             if (editMode) {

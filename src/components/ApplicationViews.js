@@ -7,42 +7,47 @@ import TaskList from "./tasks/TaskList"
 import { EventProvider } from "./events/EventProvider"
 import EventList from "./events/EventList"
 import NewsList from "./news/NewsList"
+import NewsForm from "./news/NewsForm"
 
 
 export default (props) => {
     return (
-        <>
-            <Route exact path="/">
+      <>
+        <Route exact path="/"></Route>
 
-            </Route>
+        <NewsProvider>
+          <Route
+            exact path="/news/create"
+            render={props => <NewsForm {...props} />}
+          />
+          <Route exact path="/news"
+          render={props => <NewsList {...props} />}
+          />
+        </NewsProvider>
 
-            <NewsProvider>
-                <Route exact path="/news">
-                  <NewsList />
-                </Route>
-            </NewsProvider>
+        <EventProvider>
+          <Route exact path="/events">
+            <EventList />
+          </Route>
+        </EventProvider>
 
-            <EventProvider>
-                <Route exact path="/events">
-                    <EventList />
-                </Route>
-            </EventProvider>
-
-
-
-            <TaskProvider>
-                <Route exact path="/tasks" render={
-                    props => <TaskList {...props} />
-                } />
-                <Route exact path="/tasks/create" render={
-                    props => <TaskForm {...props} />
-                } />
-                <Route exact path="/tasks/edit/:taskId(\d+)" render={
-                    props => <TaskForm {...props} />
-                } />
-            </TaskProvider>
-
-
-        </>
-    )
+        <TaskProvider>
+          <Route
+            exact
+            path="/tasks"
+            render={props => <TaskList {...props} />}
+          />
+          <Route
+            exact
+            path="/tasks/create"
+            render={props => <TaskForm {...props} />}
+          />
+          <Route
+            exact
+            path="/tasks/edit/:taskId(\d+)"
+            render={props => <TaskForm {...props} />}
+          />
+        </TaskProvider>
+      </>
+    );
 }

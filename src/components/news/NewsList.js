@@ -4,7 +4,7 @@ import News from "./News"
 // import "./News.css"
 
 export default (props) => {
-    const { news } = useContext(NewsContext)
+    const { NewsArray } = useContext(NewsContext)
 
     return (
         <>
@@ -17,7 +17,7 @@ export default (props) => {
             <div className="news">
 
                 {
-                    news.map(news => {
+                    NewsArray.map(news => {
                         return <News key={news.id} news={news} />
                     })
                 }

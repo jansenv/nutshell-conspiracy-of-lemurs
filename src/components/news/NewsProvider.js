@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 export const NewsContext = React.createContext()
 
 export const NewsProvider = (props) => {
-    const [news, setNews] = useState([])
+    const [NewsArray, setNews] = useState([])
 
     const getNews = () => {
         return fetch("http://localhost:8088/news")
@@ -46,12 +46,12 @@ export const NewsProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(news)
-    }, [news])
+        console.log(NewsArray)
+    }, [NewsArray])
 
     return (
         <NewsContext.Provider value={{
-            news, addNews, deleteNews, updateNews
+            NewsArray, addNews, deleteNews, updateNews
         }}>
             {props.children}
         </NewsContext.Provider>
