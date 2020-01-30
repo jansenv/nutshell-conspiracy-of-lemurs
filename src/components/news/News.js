@@ -1,10 +1,11 @@
 import React, { useContext } from "react"
 import { NewsContext } from "./NewsProvider"
-// import "./News.css"
 
-export default ({history,  news }) => {
-  const url = `https://www.${news.url}`
-  const { deleteNews } = useContext(NewsContext)
+
+  export default ({history,  news }) => {
+      const url = `https://www.${news.url}`
+      const { NewsArray, deleteNews, updateNews } = useContext(NewsContext)
+      
 
  return (
     <section className="news">
@@ -15,6 +16,11 @@ export default ({history,  news }) => {
         <div className="news__synopsis">{ news.synopsis }</div>
         {/* <div>Submitted by ${news.user.firstName} ${news.user.lastName}</div> */}
 
+
+         <button onClick={() => {
+                history.push(`/news/edit/${news.id}`)
+             }}>Edit</button>
+
         <button onClick={
                 () => {
                     deleteNews(news)
@@ -22,9 +28,7 @@ export default ({history,  news }) => {
                             history.push("/news")
                         })
                 }
-            }>
-                Delete
-            </button>
+            }>Delete</button>
     </section>
 )
   }

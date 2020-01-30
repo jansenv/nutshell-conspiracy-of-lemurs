@@ -16,12 +16,16 @@ export default (props) => {
         <Route exact path="/"></Route>
 
         <NewsProvider>
+          <Route exact path="/news"
+          render={props => <NewsList {...props} />}
+          />
           <Route
             exact path="/news/create"
             render={props => <NewsForm {...props} />}
           />
-          <Route exact path="/news"
-          render={props => <NewsList {...props} />}
+          <Route
+            exact path="/news/edit/:newsId(\d+)"
+            render={props => <NewsForm {...props} />}
           />
         </NewsProvider>
 
