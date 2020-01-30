@@ -3,7 +3,7 @@ import "./Events.css"
 import { EventContext } from "./EventProvider"
 import Event from "./Event"
 
-export default () => {
+export default (props) => {
     const { events } = useContext(EventContext)
 
     return (
@@ -13,7 +13,7 @@ export default () => {
             <div className="events">
                 {
                     events.map(event => {
-                        return <Event key={event.id} event={event} />
+                        return <Event key={event.id} event={event} {...props} />
                     })
                 }
             </div>
