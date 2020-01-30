@@ -19,7 +19,7 @@ export default (props) => {
         <>
             <UserProvider>
                 <FriendProvider>
-                    <Route exact path="/"
+                    <Route path="/"
                         render={props => <FriendList {...props} />}
                     />
                 </FriendProvider>
