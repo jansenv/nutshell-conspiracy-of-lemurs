@@ -4,6 +4,7 @@ import { TaskProvider } from "./tasks/TaskProvider"
 import { NewsProvider } from "./news/NewsProvider"
 import { EventProvider } from "./events/EventProvider"
 import EventList from "./events/EventList"
+import NewsList from "./news/NewsList"
 
 
 export default () => {
@@ -15,7 +16,7 @@ export default () => {
 
             <NewsProvider>
                 <Route exact path="/news">
-
+                  <NewsList />
                 </Route>
             </NewsProvider>
 
