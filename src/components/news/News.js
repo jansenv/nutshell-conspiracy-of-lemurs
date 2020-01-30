@@ -2,9 +2,10 @@ import React, { useContext } from "react"
 import { NewsContext } from "./NewsProvider"
 
 
-export default ({history, news }) => {
-  const url = `https://www.${news.url}`
-  const { NewsArray, deleteNews, updateNews } = useContext(NewsContext)
+  export default ({history,  news }) => {
+      const url = `https://www.${news.url}`
+      const { NewsArray, deleteNews, updateNews } = useContext(NewsContext)
+      
 
  return (
     <section className="news">
@@ -22,7 +23,7 @@ export default ({history, news }) => {
 
         <button onClick={
                 () => {
-                    deleteNews(NewsArray)
+                    deleteNews(news)
                         .then(() => {
                             history.push("/news")
                         })
