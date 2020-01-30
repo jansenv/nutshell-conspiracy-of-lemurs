@@ -5,9 +5,9 @@ import { NewsProvider } from "./news/NewsProvider"
 import TaskForm from "./tasks/TaskForm"
 import TaskList from "./tasks/TaskList"
 import { EventProvider } from "./events/EventProvider"
-import EventList from "./events/EventList"
 import NewsList from "./news/NewsList"
 import NewsForm from "./news/NewsForm"
+import EventList from "./events/EventList"
 
 
 export default (props) => {
@@ -26,9 +26,9 @@ export default (props) => {
         </NewsProvider>
 
         <EventProvider>
-          <Route exact path="/events">
-            <EventList />
-          </Route>
+                <Route exact path="/events" render={
+                    props => <EventList {...props} />
+                } />
         </EventProvider>
 
         <TaskProvider>
