@@ -4,7 +4,6 @@ import "./Friends.css"
 import { FriendContext } from "./FriendProvider"
 import { UserContext } from "../users/UserProvider"
 
-
 export default (props) => {
     const { users } = useContext(UserContext)
     const { friends, addFriend } = useContext(FriendContext)
@@ -36,7 +35,7 @@ export default (props) => {
             reducedUsers.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], [])
             console.log(reducedUsers)
             console.log(filteredUsers)
-            // const searchedArray = React.createContext
+            
         }
     }
 
@@ -48,7 +47,7 @@ export default (props) => {
 
         return (
             <>
-                <div className="sectionHeader">Friends List!</div>
+                <h4 className="sectionHeader">Friends List!</h4>
                 <div className="friendBox">
                     <input placeholder="Search"
                         id="friendSearch"
