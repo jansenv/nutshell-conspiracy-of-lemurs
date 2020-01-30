@@ -18,7 +18,7 @@ export default (props) => {
 
                 {
                     NewsArray.map(news => {
-                        return <News key={news.id} news={news} />
+                        return <News key={news.id} news={news} {...props} />
                     })
                 }
             </div>
