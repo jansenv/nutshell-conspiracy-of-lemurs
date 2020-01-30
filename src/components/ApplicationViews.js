@@ -4,24 +4,29 @@ import { TaskProvider } from "./tasks/TaskProvider"
 import { NewsProvider } from "./news/NewsProvider"
 import TaskForm from "./tasks/TaskForm"
 import TaskList from "./tasks/TaskList"
+import { EventProvider } from "./events/EventProvider"
+import EventList from "./events/EventList"
 
 
 export default (props) => {
     return (
         <>
-                  <Route exact path="/">
+            <Route exact path="/">
 
-                  </Route>
+            </Route>
 
-          <NewsProvider>
-                  <Route exact path="/news">
+            <NewsProvider>
+                <Route exact path="/news">
 
-                  </Route>
-          </NewsProvider>
+                </Route>
+            </NewsProvider>
 
-                  <Route exact path="/events">
+            <EventProvider>
+                <Route exact path="/events">
+                    <EventList />
+                </Route>
+            </EventProvider>
 
-                  </Route>
 
 
                   <TaskProvider>   
