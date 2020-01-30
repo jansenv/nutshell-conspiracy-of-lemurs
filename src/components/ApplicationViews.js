@@ -4,14 +4,23 @@ import { TaskProvider } from "./tasks/TaskProvider"
 import { NewsProvider } from "./news/NewsProvider"
 import { EventProvider } from "./events/EventProvider"
 import EventList from "./events/EventList"
+import { FriendProvider } from "./friends/FriendProvider"
+import FriendList from "./friends/FriendList"
+import { UserProvider } from "./users/UserProvider"
 
 
 export default () => {
     return (
         <>
-            <Route exact path="/">
+            <UserProvider>
+                <FriendProvider>
+                    <Route exact path="/">
+                        <FriendList />
+                    </Route>
+                </FriendProvider>
+            </UserProvider>
 
-            </Route>
+
 
             <NewsProvider>
                 <Route exact path="/news">

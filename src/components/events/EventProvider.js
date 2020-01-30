@@ -31,7 +31,7 @@ export const EventProvider = (props) => {
 
 
     const updateEvent = event => {
-        return fetch(`http://localhost:8088eevents/${event.id}`, {
+        return fetch(`http://localhost:8088/events/${event.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
