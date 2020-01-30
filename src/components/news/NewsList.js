@@ -10,6 +10,10 @@ export default (props) => {
         <>
             <h1>News</h1>
 
+            <button onClick={() => props.history.push("/news/create")}>
+                Add News
+            </button>
+
             <div className="news">
 
                 {
