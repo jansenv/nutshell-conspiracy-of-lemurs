@@ -4,16 +4,20 @@ import News from "./News"
 // import "./News.css"
 
 export default (props) => {
-    const { news } = useContext(NewsContext)
+    const { NewsArray } = useContext(NewsContext)
 
     return (
         <>
             <h1>News</h1>
 
+            <button onClick={() => props.history.push("/news/create")}>
+                Add News
+            </button>
+
             <div className="news">
 
                 {
-                    news.map(news => {
+                    NewsArray.map(news => {
                         return <News key={news.id} news={news} />
                     })
                 }
