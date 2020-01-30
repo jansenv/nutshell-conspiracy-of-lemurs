@@ -5,16 +5,25 @@ import { NewsProvider } from "./news/NewsProvider"
 import TaskForm from "./tasks/TaskForm"
 import TaskList from "./tasks/TaskList"
 import { EventProvider } from "./events/EventProvider"
+import EventList from "./events/EventList"
+import { FriendProvider } from "./friends/FriendProvider"
+import FriendList from "./friends/FriendList"
+import { UserProvider } from "./users/UserProvider"
 import NewsList from "./news/NewsList"
 import NewsForm from "./news/NewsForm"
 import EventForm from "./events/EventForm"
-import EventList from "./events/EventList"
 
 
 export default (props) => {
-  return (
-    <>
-      <Route exact path="/"></Route>
+    return (
+        <>
+            <UserProvider>
+                <FriendProvider>
+                    <Route path="/"
+                        render={props => <FriendList {...props} />}
+                    />
+                </FriendProvider>
+            </UserProvider>
 
       <NewsProvider>
         <Route exact path="/news"
