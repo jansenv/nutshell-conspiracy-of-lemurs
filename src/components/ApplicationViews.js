@@ -18,45 +18,45 @@ export default (props) => {
         <>
             <UserProvider>
                 <FriendProvider>
-                    <Route exact path="/">
-                        <FriendList />
-                    </Route>
+                    <Route exact path="/"
+                        render={props => <FriendList {...props} />}
+                    />
                 </FriendProvider>
             </UserProvider>
 
-        <NewsProvider>
-          <Route
-            exact path="/news/create"
-            render={props => <NewsForm {...props} />}
-          />
-          <Route exact path="/news"
-          render={props => <NewsList {...props} />}
-          />
-        </NewsProvider>
+            <NewsProvider>
+                <Route
+                    exact path="/news/create"
+                    render={props => <NewsForm {...props} />}
+                />
+                <Route exact path="/news"
+                    render={props => <NewsList {...props} />}
+                />
+            </NewsProvider>
 
-        <EventProvider>
-          <Route exact path="/events">
-            <EventList />
-          </Route>
-        </EventProvider>
+            <EventProvider>
+                <Route exact path="/events">
+                    <EventList />
+                </Route>
+            </EventProvider>
 
-        <TaskProvider>
-          <Route
-            exact
-            path="/tasks"
-            render={props => <TaskList {...props} />}
-          />
-          <Route
-            exact
-            path="/tasks/create"
-            render={props => <TaskForm {...props} />}
-          />
-          <Route
-            exact
-            path="/tasks/edit/:taskId(\d+)"
-            render={props => <TaskForm {...props} />}
-          />
-        </TaskProvider>
-      </>
+            <TaskProvider>
+                <Route
+                    exact
+                    path="/tasks"
+                    render={props => <TaskList {...props} />}
+                />
+                <Route
+                    exact
+                    path="/tasks/create"
+                    render={props => <TaskForm {...props} />}
+                />
+                <Route
+                    exact
+                    path="/tasks/edit/:taskId(\d+)"
+                    render={props => <TaskForm {...props} />}
+                />
+            </TaskProvider>
+        </>
     );
 }

@@ -1,49 +1,65 @@
-import React, { useContext, useReducer } from "react"
+import React, { useContext, useRef } from "react"
 import Friend from "./Friend"
 import "./Friends.css"
 import { FriendContext } from "./FriendProvider"
 import { UserContext } from "../users/UserProvider"
 
-export default (props) => {
-    const { friends } = useContext(FriendContext)
-    const { users } = useContext(UserContext)
 
-    {
-        const whoIAm = users.find(person => person.id === localStorage.getItem("activeUser"))
+export default (props) => {
+    const { users } = useContext(UserContext)
+    const { friends, addFriend } = useContext(FriendContext)
+    const friendSearch = useRef("")
+
+    // const constructNewFriend = () => {
+    //         {
+    //             addFriend ({
+    //                 userId: friend.id,
+    //                 activeUserId: parseInt(localStorage.getItem("activeUser"))
+    //             })
+    //                 .then(() => props.history.push("/"))
+    //         }
+    //     }
+    
+    // const SearchFriends = () => {
+    //     users.filter(us=>{
+    //         Object.values(us).map(ass=>{
+    //           if(String(ass).toLowerCase().includes(friendSearch.value.toLowerCase())){
+    //           return ass
+    //         }
+
+    //         }) 
+    //       })
+    //         console.log(users) 
+    // }
     
 
-        friends.map(friend => {
-            if (friend.activeUserId === localStorage.getItem("activeUser")) {
-                const foundFriend = users.find(user => user.id === friend.userId)
-                console.log(foundFriend)
-                return (
-                    <Friend key={foundFriend.id} friend={foundFriend}></Friend>
-                )
-            }
+    {
+        const foundFriends = friends.filter(friend => {
+            return friend.activeUserId === parseInt(localStorage.getItem("activeUser"))
         })
-        return null
+
+        return (
+        <>
+            <div className="sectionHeader">Friends List!</div>
+            <div className="friendBox">
+            <input placeholder="Search"
+                id="friendSearch"
+                ref={friendSearch}
+                onChange = {console.log(friendSearch)}
+                type="text"
+                class="friendSearch"
+                placeholder="Search for friends here!" />
+            {
+                foundFriends.map(friend => {
+                    console.log(friend)
+                    return (
+                        <Friend key={friend.id} friend={friend} />
+                    )
+                }
+            )
+            }
+            </div>
+        </>
+        )
     }
-
-
-
-    // return (
-    //     <div>
-    //     <button onClick={() => {
-    //         if (localStorage.getItem("kennel_customer")) {
-    //             props.history.push("/animals/create")               
-    //         } else {
-    //             props.history.push("/register")
-    //         }}}>
-    //         Make Appointment
-    //     </button>
-    //     <div className="animals">
-    //     {
-    //         animals.map(ani => {
-                
-    //         return <Animal key={ani.id} animal={ani} />
-    //         })
-    //     }
-    //     </div>
-    //     </div>
-    // )
 }
