@@ -77,7 +77,7 @@ export default props => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="timestamp">Time: </label>
-                    <input type="date" name="timestamp" required className="form-control"
+                    <input type="datetime-local" name="timestamp" required className="form-control"
                         proptype="varchar"
                         placeholder=""
                         defaultValue={Events.timestamp}
