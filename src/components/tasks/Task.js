@@ -1,5 +1,5 @@
 //Authored by Willy
-import React, { useContext, useRef } from "react"
+import React, { useContext} from "react"
 import "./Task.css"
 import { TaskContext } from "./TaskProvider"
 
@@ -8,22 +8,34 @@ export default ({ task, history }) => {
 
 
 const checkbox = ()=>{
+    let checkboxValue = true
     if(task.isCompleted === true){
-        return <input type="checkbox" name="checkbox" onChange={()=>{
+        return <>
+        <input type="checkbox" name="checkbox" onChange={()=>{
+            checkboxValue = false
             const patchedTask= {
-                isCompleted:task.isCompleted,
+                isCompleted:checkboxValue,
                 id: task.id
             }
             patchTask(patchedTask).then(()=> history.push("/tasks"))
         }} checked></input>
+        
+        </>
     }else{
-        return <input type="checkbox" name="checkbox" onChange={()=>{
+        checkboxValue = true
+        
+        return <>
+        <input type="checkbox" name="checkbox" onChange={()=>{
             const patchedTask= {
-                isCompleted:task.isCompleted,
+                isCompleted:checkboxValue,
                 id: task.id
             }
             patchTask(patchedTask).then(()=> history.push("/tasks"))
         }}></input>
+        <button onClick={() => {
+            history.push(`/tasks/edit/${task.id}`)
+        }}>Edit</button>
+        </>
     }
 }
 
@@ -40,9 +52,7 @@ return (
 
 
 
-<button onClick={() => {
-                history.push(`/tasks/edit/${task.id}`)
-            }}>Edit</button>
+
 
            
         <button className="deleteTaskButton" onClick={()=>{
