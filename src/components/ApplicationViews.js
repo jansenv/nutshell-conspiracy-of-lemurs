@@ -8,6 +8,7 @@ import { EventProvider } from "./events/EventProvider"
 import NewsList from "./news/NewsList"
 import NewsForm from "./news/NewsForm"
 import EventList from "./events/EventList"
+import NewsForm from "./news/NewsForm"
 
 
 export default (props) => {
@@ -49,5 +50,5 @@ export default (props) => {
           />
         </TaskProvider>
       </>
-    );
+  );
 }
