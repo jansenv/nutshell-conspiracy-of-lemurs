@@ -36,6 +36,7 @@ export default (props) => {
             reducedUsers.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], [])
             console.log(reducedUsers)
             console.log(filteredUsers)
+            // const searchedArray = React.createContext
         }
     }
 
@@ -70,3 +71,7 @@ export default (props) => {
         )
     }
 }
+
+// export const SearchUserList=()=>{
+//     searchedArray.map()
+// }
