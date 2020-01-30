@@ -10,6 +10,10 @@ export default (props) => {
         <>
             <h1>Events</h1>
 
+            <button onClick={() => props.history.push("/events/create")}>
+                Add Event
+            </button>
+
             <div className="events">
                 {
                     events.map(event => {
