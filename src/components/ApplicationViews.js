@@ -26,13 +26,10 @@ export default () => {
                 </Route>
             </EventProvider>
 
-
             <TaskProvider>
                 <Route exact path="/tasks">
                 </Route>
             </TaskProvider>
-
-
         </>
     )
 }
