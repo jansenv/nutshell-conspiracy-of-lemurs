@@ -35,9 +35,10 @@ export default props => {
 
     const constructNewTask = () => {
 
-
+        
+       
             if (editMode) {
-                updateTask({
+                updateTask({ 
                     id: task.id,
                     name: task.name,
                     task: task.task,
@@ -56,7 +57,9 @@ export default props => {
                 })
                     .then(() => props.history.push("/tasks"))
             }
+
         }
+        
     
 
     return (
@@ -98,8 +101,13 @@ export default props => {
 
             <button type="submit"
                 onClick={evt => {
+                    if(task.name === "" || task.task==="" || task.dateTime ===""){
+                        window.alert("Please fill out all input fields")
+                    }else{
                     evt.preventDefault()
                     constructNewTask()
+                    }
+                    
                 }}
                 className="btn btn-primary">
                 {editMode ? "Save Updates" : "Create Task"}
