@@ -4,7 +4,7 @@ import { NewsContext } from "./NewsProvider"
 
   export default ({history,  news }) => {
       const url = `https://www.${news.url}`
-      const { NewsArray, deleteNews, updateNews } = useContext(NewsContext)
+      const { deleteNews } = useContext(NewsContext)
       
 
  return (
