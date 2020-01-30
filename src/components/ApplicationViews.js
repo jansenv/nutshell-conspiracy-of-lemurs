@@ -8,6 +8,7 @@ import { EventProvider } from "./events/EventProvider"
 import NewsList from "./news/NewsList"
 import EventList from "./events/EventList"
 import NewsForm from "./news/NewsForm"
+import EventForm from "./events/EventForm"
 
 
 export default (props) => {
@@ -29,6 +30,11 @@ export default (props) => {
                 <Route exact path="/events" render={
                     props => <EventList {...props} />
                 } />
+                <Route
+                    exact
+                    path="/events/create"
+                    render={props => <EventForm {...props} />}
+                />
             </EventProvider>
 
 
