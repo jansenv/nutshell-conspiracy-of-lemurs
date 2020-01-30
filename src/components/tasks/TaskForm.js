@@ -42,7 +42,7 @@ export default props => {
                     name: task.name,
                     task: task.task,
                     dueDate: task.dateTime,
-                    isCompleted: task.isCompleted.value,
+                    isCompleted: false,
                     userId: parseInt(localStorage.getItem("activeUser"))
                 })
                     .then(() => props.history.push("/tasks"))
@@ -95,16 +95,7 @@ export default props => {
                     </input>
                 </div>
             </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="completed">Completed ? </label>
-                    <input type="checkbox" name="checkbox" className="form-control"
-                        proptype="varchar"
-                        value={task.isCompleted}
-                        onChange={handleControlledInputChange}>
-                    </input>
-                </div>
-            </fieldset>
+
             <button type="submit"
                 onClick={evt => {
                     evt.preventDefault()
