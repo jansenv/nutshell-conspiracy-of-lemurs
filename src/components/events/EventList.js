@@ -7,6 +7,19 @@ import { FriendContext } from "../friends/FriendProvider"
 export default (props) => {
     const { events } = useContext(EventContext)
     const { friends } = useContext(FriendContext)
+    const activeUserId = parseInt(localStorage.getItem("activeUser"), 10)
+
+    const filteredFriends = friends.filter(friend => friend.activeUserId === activeUserId)
+
+    let friendsIdsArray = []
+
+    filteredFriends.forEach(friend => {
+        friendsIdsArray.push(friend.userId)
+    })
+
+    const filteredEvents = events.filter(event => event.userId === activeUserId || friendsIdsArray.includes(event.userId))
+
+    const sortedEvents = filteredEvents.sort((a, b) => b.date = a.date)
 
     return (
         <>
@@ -18,7 +31,7 @@ export default (props) => {
 
             <div className="events">
                 {
-                    events.map(event => {
+                    sortedEvents.map(event => {
                         return <Event key={event.id} event={event} {...props} />
                     })
                 }
