@@ -2,11 +2,32 @@ import React, { useContext } from "react"
 import "./Events.css"
 import { EventContext } from "./EventProvider"
 
-// ask Mo why use history instead of props
-
 export default ({ event, history }) => {
-    const { deleteEvent } = useContext(EventContext)
 
+    const { deleteEvent } = useContext(EventContext)
+    
+    // Display conditional buttons
+    function LoggedInUserButtons() {
+      if (event.userId === parseInt(localStorage.getItem("activeUser"))) {
+        return (
+          <>
+            <button onClick={() => {
+              history.push(`/events/edit/${event.id}`)
+          }}>Edit</button>
+
+          <button onClick={
+              () => {
+                  deleteEvent(event)
+                      .then(() => {
+                          history.push("/events")
+                      })}
+          }>Delete</button>
+        </>
+        )
+      }
+    } 
+
+    // Formatting time display
     const timeFormat = (dateTimePicked) => {
         const [date, militaryTime] = dateTimePicked.split("T")
         let [hours, minutes] = militaryTime.split(":")
@@ -28,10 +49,11 @@ export default ({ event, history }) => {
         <section className="event">
             <h3 className="event__name">{event.name}</h3>
             <div className="event__location">{event.location}</div>
-            <div className="event__time">{event.timestamp}</div>
-            <div className="event__poster">posted by userId {event.userId}</div>
+            <div className="event__time">{new Date(event.timestamp).toLocaleDateString('en-US') + " " + timeFormat(event.timestamp)}</div>
+            <div className="event__poster">posted by {event.user.firstName} {event.user.lastName}</div>
+            <div>{LoggedInUserButtons()}</div>
 
-            <button onClick={() => {
+            {/* <button onClick={() => {
                 history.push(`/events/edit/${event.id}`)
              }}>Edit</button>
 
@@ -44,7 +66,7 @@ export default ({ event, history }) => {
                 }
             }>
                 Delete
-            </button>
+            </button> */}
         </section>
     )
 }

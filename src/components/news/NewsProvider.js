@@ -1,3 +1,5 @@
+// Authored by Spencer Truett
+
 import React, { useState, useEffect } from "react"
 
 export const NewsContext = React.createContext()
@@ -46,7 +48,6 @@ export const NewsProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(NewsArray)
     }, [NewsArray])
 
     return (
