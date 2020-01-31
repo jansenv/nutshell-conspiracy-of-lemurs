@@ -50,7 +50,7 @@ export default ({ event, history }) => {
             <h3 className="event__name">{event.name}</h3>
             <div className="event__location">{event.location}</div>
             <div className="event__time">{timeFormat(event.timestamp)}</div>
-            <div className="event__poster">posted by userId {event.userId}</div>
+            <div className="event__poster">posted by {event.user.firstName} {event.user.lastName}</div>
             <div>{LoggedInUserButtons()}</div>
 
             {/* <button onClick={() => {
