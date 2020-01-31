@@ -49,17 +49,19 @@ export default (props) => {
       </NewsProvider>
 
 
-            <EventProvider>
-                <Route exact path="/events" render={
-                    props => <EventList {...props} />
-                } />
-                <Route exact path="/events/create"
-                    render={props => <EventForm {...props} />}
-                />
-                <Route exact path="/events/edit/:eventId(\d+)"
-                    render={props => <EventForm {...props} />}
-                />
-            </EventProvider>
+            <FriendProvider>
+                <EventProvider>
+                    <Route exact path="/events" render={
+                        props => <EventList {...props} />
+                    } />
+                    <Route exact path="/events/create"
+                        render={props => <EventForm {...props} />}
+                    />
+                    <Route exact path="/events/edit/:eventId(\d+)"
+                        render={props => <EventForm {...props} />}
+                    />
+                </EventProvider>
+            </FriendProvider>
 
             <TaskProvider>
                 <Route
