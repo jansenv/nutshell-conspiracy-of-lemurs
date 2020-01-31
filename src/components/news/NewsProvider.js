@@ -48,7 +48,6 @@ export const NewsProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(NewsArray)
     }, [NewsArray])
 
     return (
