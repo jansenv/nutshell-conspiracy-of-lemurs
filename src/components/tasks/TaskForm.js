@@ -7,10 +7,10 @@ import { TaskContext } from "./TaskProvider"
 
 export default props => {
     const { addTask, tasks, updateTask } = useContext(TaskContext)
-    const [task, setTask] = useState({})
-
+    
     const editMode = props.match.params.hasOwnProperty("taskId")
-
+    
+    const [task, setTask] = useState({})
     const handleControlledInputChange = (event) => {
         /*
             When changing a state object or array, always create a new one
@@ -34,10 +34,9 @@ export default props => {
     }, [tasks])
 
     const constructNewTask = () => {
-
-
+   
             if (editMode) {
-                updateTask({
+                updateTask({ 
                     id: task.id,
                     name: task.name,
                     task: task.task,
@@ -56,7 +55,9 @@ export default props => {
                 })
                     .then(() => props.history.push("/tasks"))
             }
+
         }
+        
     
 
     return (
@@ -98,8 +99,13 @@ export default props => {
 
             <button type="submit"
                 onClick={evt => {
+                    if(task.name === "" || task.task==="" || task.dateTime ===""){
+                        window.alert("Please fill out all input fields")
+                    }else{
                     evt.preventDefault()
                     constructNewTask()
+                    }
+                    
                 }}
                 className="btn btn-primary">
                 {editMode ? "Save Updates" : "Create Task"}
