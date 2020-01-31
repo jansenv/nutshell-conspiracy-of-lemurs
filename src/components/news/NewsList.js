@@ -12,9 +12,10 @@ export default (props) => {
     const { NewsArray } = useContext(NewsContext)
     const { friends } = useContext(FriendContext)
 
+    const SortedNews = NewsArray.reverse()
     let isFriend = false;
 
-    const usersNews = NewsArray.filter(
+    const usersNews = SortedNews.filter(
       article =>
           article.userId === parseInt(localStorage.getItem("activeUser"))
   )
@@ -23,7 +24,7 @@ export default (props) => {
     let friendsNews = []
       friends.map(friend => {
           if (friend.activeUserId === parseInt(localStorage.getItem("activeUser"))) {
-              NewsArray.filter(
+              SortedNews.filter(
                   article => {
                       if (article.userId === friend.user.id) {
                           friendsNews.push(article)
