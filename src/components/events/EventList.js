@@ -19,7 +19,10 @@ export default (props) => {
 
     const filteredEvents = events.filter(event => event.userId === activeUserId || friendsIdsArray.includes(event.userId))
 
-    const sortedEvents = filteredEvents.sort((a, b) => b.date = a.date)
+    const sortedEvents = filteredEvents.sort(
+        (currentEvent, nextEvent) =>
+        Date.parse(currentEvent.timestamp) - Date.parse(nextEvent.timestamp)
+    )
 
     return (
         <>
