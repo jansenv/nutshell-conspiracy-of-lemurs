@@ -3,8 +3,31 @@ import "./Events.css"
 import { EventContext } from "./EventProvider"
 
 export default ({ event, history }) => {
-    const { deleteEvent } = useContext(EventContext)
 
+    const { deleteEvent } = useContext(EventContext)
+    
+    // Display conditional buttons
+    function LoggedInUserButtons() {
+      if (event.userId === parseInt(localStorage.getItem("activeUser"))) {
+        return (
+          <>
+            <button onClick={() => {
+              history.push(`/events/edit/${event.id}`)
+          }}>Edit</button>
+
+          <button onClick={
+              () => {
+                  deleteEvent(event)
+                      .then(() => {
+                          history.push("/events")
+                      })}
+          }>Delete</button>
+        </>
+        )
+      }
+    } 
+
+    // Formatting time display
     const timeFormat = (dateTimePicked) => {
         const [date, militaryTime] = dateTimePicked.split("T")
         let [hours, minutes] = militaryTime.split(":")
@@ -28,8 +51,9 @@ export default ({ event, history }) => {
             <div className="event__location">{event.location}</div>
             <div className="event__time">{timeFormat(event.timestamp)}</div>
             <div className="event__poster">posted by userId {event.userId}</div>
+            <div>{LoggedInUserButtons()}</div>
 
-            <button onClick={() => {
+            {/* <button onClick={() => {
                 history.push(`/events/edit/${event.id}`)
              }}>Edit</button>
 
@@ -42,7 +66,7 @@ export default ({ event, history }) => {
                 }
             }>
                 Delete
-            </button>
+            </button> */}
         </section>
     )
 }

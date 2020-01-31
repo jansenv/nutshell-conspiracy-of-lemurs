@@ -2,9 +2,11 @@ import React, { useContext } from "react"
 import "./Events.css"
 import { EventContext } from "./EventProvider"
 import Event from "./Event"
+import { FriendContext } from "../friends/FriendProvider"
 
 export default (props) => {
     const { events } = useContext(EventContext)
+    const { friends } = useContext(FriendContext)
 
     return (
         <>
