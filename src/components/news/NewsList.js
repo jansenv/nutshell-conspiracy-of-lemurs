@@ -55,7 +55,7 @@ export default (props) => {
 
 
           return (
-            <News props={props} key={singleNews.id}
+            <News {...props} key={singleNews.id}
                   news={singleNews}
                   friendStatus={isFriend} />
         )
