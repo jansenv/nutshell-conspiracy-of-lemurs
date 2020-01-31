@@ -1,3 +1,5 @@
+// Authored by Spencer Truett
+
 import React, { useContext, useState, useEffect } from "react"
 import { NewsContext } from "./NewsProvider"
 
@@ -34,7 +36,7 @@ export default props => {
                     title: news.title,
                     url: news.url,
                     synopsis: news.synopsis,
-                    userIUd: parseInt(localStorage.getItem("activeUser"))
+                    userId: parseInt(localStorage.getItem("activeUser"))
                 })
                     .then(() => props.history.push("/news"))
             } else {
@@ -43,7 +45,7 @@ export default props => {
                   title: news.title,
                   url: news.url,
                   synopsis: news.synopsis,
-                  userIUd: parseInt(localStorage.getItem("activeUser"))
+                  userId: parseInt(localStorage.getItem("activeUser"))
               })
                   .then(() => props.history.push("/news"))
             }

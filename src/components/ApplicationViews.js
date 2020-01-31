@@ -32,19 +32,22 @@ export default (props) => {
                 </FriendProvider>
             </UserProvider>
 
-            <NewsProvider>
-                <Route exact path="/news"
-                    render={props => <NewsList {...props} />}
-                />
-                <Route
-                    exact path="/news/create"
-                    render={props => <NewsForm {...props} />}
-                />
-                <Route
-                    exact path="/news/edit/:newsId(\d+)"
-                    render={props => <NewsForm {...props} />}
-                />
-            </NewsProvider>
+      <NewsProvider>
+        <FriendProvider>
+          <Route exact path="/news"
+            render={props => <NewsList {...props} />}
+          />
+          <Route
+            exact path="/news/create"
+            render={props => <NewsForm {...props} />}
+          />
+          <Route
+            exact path="/news/edit/:newsId(\d+)"
+            render={props => <NewsForm {...props} />}
+          />
+        </FriendProvider>
+      </NewsProvider>
+
 
             <EventProvider>
                 <Route exact path="/events" render={
