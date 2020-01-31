@@ -7,10 +7,10 @@ import { TaskContext } from "./TaskProvider"
 
 export default props => {
     const { addTask, tasks, updateTask } = useContext(TaskContext)
-    const [task, setTask] = useState({})
-
+    
     const editMode = props.match.params.hasOwnProperty("taskId")
-
+    
+    const [task, setTask] = useState({})
     const handleControlledInputChange = (event) => {
         /*
             When changing a state object or array, always create a new one
@@ -34,9 +34,7 @@ export default props => {
     }, [tasks])
 
     const constructNewTask = () => {
-
-        
-       
+   
             if (editMode) {
                 updateTask({ 
                     id: task.id,

@@ -14,6 +14,8 @@ import NewsForm from "./news/NewsForm"
 import EventForm from "./events/EventForm"
 import { MessageProvider } from "./messages/MessageProvider"
 import MessageList from "./messages/MessageList"
+import UserList from "./users/UserList"
+import UserSearch from "./users/UserSearch"
 
 
 export default (props) => {
@@ -27,6 +29,11 @@ export default (props) => {
                         />
                         <Route path="/"
                             render={props => <MessageList {...props} />}
+                        />
+                        <Route
+                            exact
+                            path="/friends"
+                            render={props => <UserList {...props} />}
                         />
                     </MessageProvider>
                 </FriendProvider>
@@ -75,6 +82,8 @@ export default (props) => {
                     render={props => <TaskForm {...props} />}
                 />
             </TaskProvider>
+
+
         </>
     );
 }

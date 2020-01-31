@@ -19,25 +19,7 @@ export default (props) => {
     //         }
     //     }
 
-    const SearchFriends = (event) => {
-        const filteredUsers = []
-        if (event.target.value !== "") {
-            users.filter(us => {
-                Object.values(us).map(ass => {
-                    if (String(ass).toLowerCase().includes(event.target.value.toLowerCase())) {
-                        filteredUsers.push(us)
-                    }
-
-                })
-            })
-            const reducedUsers = [...new Set(filteredUsers)]
-            reducedUsers.filter((item, index) => reducedUsers.indexOf(item) === index)
-            reducedUsers.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], [])
-            console.log(reducedUsers)
-            console.log(filteredUsers)
-            
-        }
-    }
+    
 
 
     {
@@ -49,16 +31,10 @@ export default (props) => {
             <>
                 <h4 className="sectionHeader">Friends List!</h4>
                 <div className="friendBox">
-                    <input placeholder="Search"
-                        id="friendSearch"
-                        ref={friendSearch}
-                        onChange={SearchFriends}
-                        type="text"
-                        className="friendSearch"
-                        placeholder="Search for friends here!" />
+                    
                     {
                         foundFriends.map(friend => {
-                            console.log(friend)
+                            
                             return (
                                 <Friend key={friend.id} friend={friend} />
                             )
