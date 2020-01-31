@@ -4,28 +4,13 @@ import { FriendContext } from "../friends/FriendProvider"
 
 export default ({ user}) => {
 const {addFriend}= useContext(FriendContext)
-const { friends } = useContext(FriendContext)
-
-
-let filteredFriends = []
-friends.filter(user => {
-  if (user.activeUserId === parseInt(localStorage.getItem("activeUser"), 10)) {
-    filteredFriends.push(user.user)
-  }
-})
-console.log(filteredFriends)
-let UsersFriend= false
-filteredFriends.map(friend=>{
-  if(user.id === friend.id){
-    return UsersFriend = true
-  }
-})
 
 
 
-console.log(UsersFriend)
 
-if(UsersFriend === false){
+
+
+
 
   return (<>
     <section>
@@ -40,5 +25,5 @@ if(UsersFriend === false){
     </section>
     </>
   )
-}
+
 }
