@@ -1,0 +1,6 @@
+.event:first-child {
+  background-color: rgb(218, 165, 32, 0.75);
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 10px;
+}
