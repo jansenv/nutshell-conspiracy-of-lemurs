@@ -1,0 +1,13 @@
+.friendbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.friends {
+  background-color: cornsilk;
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 10px;
+  }

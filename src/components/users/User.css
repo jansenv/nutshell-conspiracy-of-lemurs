@@ -1,0 +1,8 @@
+.userList {
+  background-color: cornsilk;
+  padding: 5px;
+  max-width: 30%;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
