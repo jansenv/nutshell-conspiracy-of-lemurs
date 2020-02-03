@@ -8,6 +8,7 @@ export default (props) => {
 
     return (
         <>
+        <div className="messageBox">
             <h4>Messages</h4>
             <div className="messages">
                 {
@@ -16,6 +17,7 @@ export default (props) => {
                     })
                 }
             </div>
+        </div>
         </>
     )
 }

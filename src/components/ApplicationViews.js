@@ -27,12 +27,15 @@ export default (props) => {
                         <NewsProvider>
                             <MessageProvider>
                                 <EventProvider>
+                                <div className="messageFriendsContainer">
                                     <Route path="/"
                                         render={props => <FriendList {...props} />}
                                     />
                                     <Route path="/"
                                         render={props => <MessageList {...props} />}
                                     />
+                                </div>
+
                                     <Route
                                         exact
                                         path="/friends"

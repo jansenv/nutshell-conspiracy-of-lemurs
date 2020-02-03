@@ -3,10 +3,8 @@
 import React, { useContext } from "react"
 import { NewsContext } from "./NewsProvider"
 import { FriendContext } from "../friends/FriendProvider"
-
 import News from "./News"
-
-// import "./News.css"
+import "./News.css"
 
 export default (props) => {
     const { NewsArray } = useContext(NewsContext)
@@ -44,12 +42,15 @@ console.log("sorted" + SortedArray)
 
     return (
         <>
-            <h1>News</h1>
-            <div className="news">
+        <div className="newsList">
+                <div>
+                <h1>News</h1>
+                <div className="news">
 
-            <button onClick={() => props.history.push("/news/create")}>
-                Add News
-            </button>
+                <button onClick={() => props.history.push("/news/create")}>
+                    Add News
+                </button>
+            </div>
      {
         SortedArray.map(singleNews => {
           if (singleNews.userId != parseInt(localStorage.getItem("activeUser"))) {
@@ -66,6 +67,7 @@ console.log("sorted" + SortedArray)
     })
   }
             </div>
+        </div>
         </>
     )
 }

@@ -29,6 +29,7 @@ export default (props) => {
 
         return (
             <>
+            <div className="friends">
                 <h4 className="sectionHeader">Friends List!</h4>
                 <div className="friendBox">
                     
@@ -42,6 +43,7 @@ export default (props) => {
                         )
                     }
                 </div>
+            </div>
             </>
         )
     }

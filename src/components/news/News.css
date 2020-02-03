@@ -1,14 +1,12 @@
-.friendbox {
+.newsList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-.friends {
+.news {
     flex-basis: 28%;
     margin: 1em;
     padding: 1em;
     border: 1px solid goldenrod;
-    float: right;
 }
