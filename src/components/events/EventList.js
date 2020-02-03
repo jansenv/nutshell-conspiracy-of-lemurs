@@ -3,6 +3,7 @@ import "./Events.css"
 import { EventContext } from "./EventProvider"
 import Event from "./Event"
 import { FriendContext } from "../friends/FriendProvider"
+import Ad from "../popup/Ad"
 
 export default (props) => {
     const { events } = useContext(EventContext)
@@ -21,27 +22,30 @@ export default (props) => {
 
     const sortedEvents = filteredEvents.sort(
         (currentEvent, nextEvent) =>
-        Date.parse(currentEvent.timestamp) - Date.parse(nextEvent.timestamp)
+            Date.parse(currentEvent.timestamp) - Date.parse(nextEvent.timestamp)
     )
 
     return (
         <>
-        <div className="eventsList">
-            <div>
-                <h1>Events</h1>
+            <div className="eventsList">
+                <div>
 
-                <button onClick={() => props.history.push("/events/create")}>
-                    Add Event
+                    <div className="adDiv">
+                        <Ad />
+                    </div>
+
+                    <button onClick={() => props.history.push("/events/create")}>
+                        Add Event
                 </button>
-            </div>    
-            <div className="events">
-                {
-                    sortedEvents.map(event => {
-                        return <Event key={event.id} event={event} {...props} />
-                    })
-                }
+                </div>
+                <div className="events">
+                    {
+                        sortedEvents.map(event => {
+                            return <Event key={event.id} event={event} {...props} />
+                        })
+                    }
+                </div>
             </div>
-        </div>
         </>
     )
 }
