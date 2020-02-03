@@ -30,6 +30,9 @@ export default (props) => {
                                 <EventProvider>
                                 <div className="main">
                                     <div className="messageFriendsContainer">
+                                        <div className="logoContainer">
+                                            <img className="logoImage" src={require('./images/LemurLogo.png')}></img>
+                                        </div>
                                         <Route path="/"
                                             render={props => <FriendList {...props} />}
                                         />

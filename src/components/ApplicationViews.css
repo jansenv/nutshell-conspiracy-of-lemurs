@@ -12,3 +12,9 @@
 .NETContainer {
   min-width: 70%;
 }
+
+.logoImage {
+  max-width: 300px;
+  float: right;
+  padding-right: 80px;
+}
