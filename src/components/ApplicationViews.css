@@ -6,6 +6,7 @@
 
 .messageFriendsContainer {
   min-width: 30%;
+  justify-content: start;
 }
 
 .NETContainer {

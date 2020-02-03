@@ -17,6 +17,7 @@ import MessageList from "./messages/MessageList"
 import UserList from "./users/UserList"
 import "./ApplicationViews.css"
 import MessageForm from "./messages/MessageForm"
+import SlideShow from "./home/SlideShow"
 
 export default (props) => {
     return (
@@ -70,7 +71,12 @@ export default (props) => {
                                                 render={props => <NewsForm {...props} />}
                                             />
                                         </div>
-
+                                        <div className="LemurHome">
+                                        <Route
+                                                exact path="/"
+                                                render={props => <SlideShow {...props} />}
+                                            />
+                                        </div>
 
                                         <div className="eventsContainer">
                                             <Route exact path="/events" render={

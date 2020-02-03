@@ -6,7 +6,9 @@ import { FriendContext } from "../friends/FriendProvider"
 
 
 export default (props, { searchedUsers }) => {
+  console.log("seached users maybe", searchedUsers)
   const { users } = useContext(UserContext)
+  let reducedUsers = []
 const {friends} =useContext(FriendContext)
   let filteredFriends = []
   friends.filter(user => {
@@ -26,12 +28,40 @@ const {friends} =useContext(FriendContext)
       }
     }
   })
+let filteredUsers = []
+  const SearchFunction =(event)=>{
+    if (event.target.value !== "") {
+    nonFriendsArray.filter(us => {
+      Object.values(us).map(ass => {
+        if (String(ass).toLowerCase().includes(event.target.value.toLowerCase())) {
+          filteredUsers.push(us)
+        }
 
+      })
+    })
+    reducedUsers = [...new Set(filteredUsers)]
+    reducedUsers.filter((item, index) => reducedUsers.indexOf(item) === index)
+    reducedUsers.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], [])
+    console.log("SEARCHED THINGS", reducedUsers)
+
+  
+
+    
+  }
+}
 
 
 
   return (
     <>
+    
+    {/* <input placeholder="Search"
+      id="friendSearch"
+      onChange={SearchFunction}
+      type="text"
+      className="friendSearch"
+      placeholder="Search for friends here!" /> */}
+
       <h2>Add A Friend</h2>
       <div className="userList">
         <div className="friendsSearched" id="friendsSearched"></div>
@@ -45,6 +75,8 @@ const {friends} =useContext(FriendContext)
           }
         </div>
       </div>
+      
+    
     </>
 
   )
