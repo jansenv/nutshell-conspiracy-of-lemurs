@@ -16,8 +16,7 @@ import { MessageProvider } from "./messages/MessageProvider"
 import MessageList from "./messages/MessageList"
 import UserList from "./users/UserList"
 import "./ApplicationViews.css"
-
-
+import MessageForm from "./messages/MessageForm"
 
 export default (props) => {
     return (
@@ -36,8 +35,15 @@ export default (props) => {
                                         <Route path="/"
                                             render={props => <MessageList {...props} />}
                                         />
+                                        <Route
+                                            exact path="/message/edit/:messageId(\d+)"
+                                            render={props => <MessageForm {...props} />}
+                                        />
+                                        <Route
+                                            exact path="/message/create"
+                                            render={props => <MessageForm {...props} />}
+                                        />
                                     </div>
-
 
 
                                     <div className="NETContainer">
