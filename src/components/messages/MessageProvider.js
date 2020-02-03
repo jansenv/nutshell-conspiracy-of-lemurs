@@ -1,3 +1,4 @@
+// Authored by Holden Parker
 import React, { useState, useEffect } from "react"
 
 export const MessageContext = React.createContext()
