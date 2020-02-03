@@ -16,6 +16,7 @@ import { MessageProvider } from "./messages/MessageProvider"
 import MessageList from "./messages/MessageList"
 import UserList from "./users/UserList"
 import MessageForm from "./messages/MessageForm"
+import UserSearch from "./users/UserSearch"
 
 export default (props) => {
     return (
@@ -45,7 +46,11 @@ export default (props) => {
                                         path="/friends"
                                         render={props => <UserList {...props} />}
                                     />
-
+                                    {/* <Route
+                                        exact
+                                        path="/friends"
+                                        render={props => <UserSearch {...props} />}
+                                    /> */}
 
 
 

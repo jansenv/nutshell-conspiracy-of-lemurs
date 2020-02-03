@@ -33,10 +33,14 @@ const [userArray, setNewUserArray] = useState([])
         */
       //  I know this is very wrong!~~!!!
         // const newUserArray = Object.assign([], userArray)
-        
+
+        // maybe this could be right?
+        const newUserArray = Array.assign([], userArray)
+      
         newUserArray = searchedUsers
         setNewUserArray(newUserArray)
     }
+    console.log("searchedUsers", userArray)
   }
     const setDefaults = () => {
       
@@ -66,7 +70,7 @@ return (
       className="friendSearch"
       placeholder="Search for friends here!" />
 
-    <UserList key={searchedUsers[0].id} searchedUsers={searchedUsers} {...props} />
+    <UserList key={userArray[0].id} searchedUsers={userArray} {...props} />
   </>
 )
 

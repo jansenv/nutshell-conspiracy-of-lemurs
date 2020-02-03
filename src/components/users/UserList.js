@@ -6,6 +6,7 @@ import { FriendContext } from "../friends/FriendProvider"
 
 
 export default (props, { searchedUsers }) => {
+  console.log("seached users maybe", searchedUsers)
   const { users } = useContext(UserContext)
   let reducedUsers = []
 const {friends} =useContext(FriendContext)
@@ -61,7 +62,7 @@ let filteredUsers = []
       className="friendSearch"
       placeholder="Search for friends here!" /> */}
 
-      {/* <h2>Add A Friend</h2> */}
+      <h2>Add A Friend</h2>
 
    <div className="friendsSearched" id="friendsSearched">
         {
