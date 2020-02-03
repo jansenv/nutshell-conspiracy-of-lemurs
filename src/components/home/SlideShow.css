@@ -1,0 +1,14 @@
+.each-slide{
+  max-width: 100% !important;
+  max-height: fit-content !important;
+
+}
+.slideshowimage{
+  max-height: 500px !important;
+  max-width: fit-content !important;
+  
+}
+.slide-container{
+  max-width: 95% !important;
+  max-height: fit-content;
+}
