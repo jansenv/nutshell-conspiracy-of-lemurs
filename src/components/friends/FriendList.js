@@ -1,25 +1,10 @@
-import React, { useContext, useRef } from "react"
+import React, { useContext } from "react"
 import Friend from "./Friend"
 import "./Friends.css"
 import { FriendContext } from "./FriendProvider"
-import { UserContext } from "../users/UserProvider"
 
 export default (props) => {
-    const { users } = useContext(UserContext)
-    const { friends, addFriend } = useContext(FriendContext)
-    const friendSearch = useRef("")
-
-    // const constructNewFriend = () => {
-    //         {
-    //             addFriend ({
-    //                 userId: friend.id,
-    //                 activeUserId: parseInt(localStorage.getItem("activeUser"))
-    //             })
-    //                 .then(() => props.history.push("/"))
-    //         }
-    //     }
-
-    
+    const { friends } = useContext(FriendContext)
 
 
     {
