@@ -1,12 +1,17 @@
-.newsList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.news {
+  background-color: cornsilk;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
-.news {
-    flex-basis: 28%;
-    margin: 1em;
-    padding: 1em;
-    border: 1px solid goldenrod;
+
+.friendNews {
+  background-color: cornsilk;
+  font-style: italic;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
 }

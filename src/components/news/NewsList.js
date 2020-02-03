@@ -43,29 +43,28 @@ console.log("sorted" + SortedArray)
     return (
         <>
         <div className="newsList">
-                <div>
+
                 <h1>News</h1>
-                <div className="news">
 
                 <button onClick={() => props.history.push("/news/create")}>
                     Add News
                 </button>
-            </div>
-     {
-        SortedArray.map(singleNews => {
-          if (singleNews.userId != parseInt(localStorage.getItem("activeUser"))) {
-            isFriend = true;
+                <div >
+                       {
+                        SortedArray.map(singleNews => {
+                        if (singleNews.userId != parseInt(localStorage.getItem("activeUser"))) {
+                            isFriend = true;
 
-          }
+                        }
 
 
-          return (
-            <News {...props} key={singleNews.id}
-                  news={singleNews}
-                  friendStatus={isFriend} />
-        )
-    })
-  }
+                        return (
+                            <News {...props} key={singleNews.id}
+                                news={singleNews}
+                                friendStatus={isFriend} />
+                        )
+                    })
+                }
             </div>
         </div>
         </>

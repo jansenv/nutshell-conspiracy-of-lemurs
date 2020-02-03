@@ -11,8 +11,9 @@ const yourTasks = tasks.filter(task => task.userId === parseInt(localStorage.get
 const completedTasks = yourTasks.filter(task=>task.isCompleted === true)
 const tasksToDo = yourTasks.filter(task=>task.isCompleted !==true)
  return (
+     <>
     <div className="tasks">
-        <div>
+       
         <h1>Tasks</h1>
         <button onClick={() => props.history.push("/tasks/create")}>
             Add Task
@@ -30,7 +31,8 @@ const tasksToDo = yourTasks.filter(task=>task.isCompleted !==true)
         <article className="taskList">
             {completedTasks.map(tas => <Task key={tas.id} task={tas} {...props} />)}
         </article>
-        </div>
+
     </div>
+    </>
 )
 }
