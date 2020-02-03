@@ -33,14 +33,17 @@ const {friends} =useContext(FriendContext)
   return (
     <>
       <h2>Add A Friend</h2>
-      <div className="friendsSearched" id="friendsSearched">
-        {
+      <div className="userList">
+        <div className="friendsSearched" id="friendsSearched"></div>
+        <div className="userNames">
+          {
 
-nonFriendsArray.map(user => {
-            return <User key={user.id} user={user} {...props} />
-          })
+       nonFriendsArray.map(user => {
+              return <User key={user.id} user={user} {...props} />
+            })
 
-        }
+          }
+        </div>
       </div>
     </>
 

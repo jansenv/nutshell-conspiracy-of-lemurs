@@ -3,10 +3,8 @@
 import React, { useContext } from "react"
 import { NewsContext } from "./NewsProvider"
 import { FriendContext } from "../friends/FriendProvider"
-
 import News from "./News"
-
-// import "./News.css"
+import "./News.css"
 
 export default (props) => {
     const { NewsArray } = useContext(NewsContext)
@@ -44,28 +42,31 @@ console.log("sorted" + SortedArray)
 
     return (
         <>
-            <h1>News</h1>
-            <div className="news">
+        <div className="newsList">
 
-            <button onClick={() => props.history.push("/news/create")}>
-                Add News
-            </button>
-     {
-        SortedArray.map(singleNews => {
-          if (singleNews.userId != parseInt(localStorage.getItem("activeUser"))) {
-            isFriend = true;
+                <h1>News</h1>
 
-          }
+                <button onClick={() => props.history.push("/news/create")}>
+                    Add News
+                </button>
+                <div >
+                       {
+                        SortedArray.map(singleNews => {
+                        if (singleNews.userId != parseInt(localStorage.getItem("activeUser"))) {
+                            isFriend = true;
+
+                        }
 
 
-          return (
-            <News {...props} key={singleNews.id}
-                  news={singleNews}
-                  friendStatus={isFriend} />
-        )
-    })
-  }
+                        return (
+                            <News {...props} key={singleNews.id}
+                                news={singleNews}
+                                friendStatus={isFriend} />
+                        )
+                    })
+                }
             </div>
+        </div>
         </>
     )
 }

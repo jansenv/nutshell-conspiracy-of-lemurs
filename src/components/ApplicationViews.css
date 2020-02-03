@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.messageFriendsContainer {
+  min-width: 30%;
+}
+
+.NETContainer {
+  min-width: 70%;
+}

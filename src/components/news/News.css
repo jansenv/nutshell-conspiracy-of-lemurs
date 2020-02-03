@@ -1,0 +1,17 @@
+.news {
+  background-color: cornsilk;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+
+.friendNews {
+  background-color: cornsilk;
+  font-style: italic;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+}

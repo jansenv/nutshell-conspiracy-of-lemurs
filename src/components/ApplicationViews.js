@@ -15,6 +15,7 @@ import EventForm from "./events/EventForm"
 import { MessageProvider } from "./messages/MessageProvider"
 import MessageList from "./messages/MessageList"
 import UserList from "./users/UserList"
+import "./ApplicationViews.css"
 import MessageForm from "./messages/MessageForm"
 
 export default (props) => {
@@ -26,70 +27,81 @@ export default (props) => {
                         <NewsProvider>
                             <MessageProvider>
                                 <EventProvider>
-                                    <Route path="/"
-                                        render={props => <FriendList {...props} />}
-                                    />
-                                    <Route path="/"
-                                        render={props => <MessageList {...props} />}
-                                    />
-                                    <Route
-                                        exact path="/message/edit/:messageId(\d+)"
-                                        render={props => <MessageForm {...props} />}
-                                    />
-                                    <Route
-                                        exact path="/message/create"
-                                        render={props => <MessageForm {...props} />}
-                                    />
-                                    <Route
-                                        exact
-                                        path="/friends"
-                                        render={props => <UserList {...props} />}
-                                    />
+                                <div className="main">
+                                    <div className="messageFriendsContainer">
+                                        <Route path="/"
+                                            render={props => <FriendList {...props} />}
+                                        />
+                                        <Route path="/"
+                                            render={props => <MessageList {...props} />}
+                                        />
+                                        <Route
+                                            exact path="/message/edit/:messageId(\d+)"
+                                            render={props => <MessageForm {...props} />}
+                                        />
+                                        <Route
+                                            exact path="/message/create"
+                                            render={props => <MessageForm {...props} />}
+                                        />
+                                    </div>
+
+
+                                    <div className="NETContainer">
+                                        <div className="userNames">
+                                            <Route
+                                                exact
+                                                path="/friends"
+                                                render={props => <UserList {...props} />}
+                                            />
+                                        </div>
+                                        <div className="newsContainer">
+                                            <Route exact path="/news"
+                                                render={props => <NewsList {...props} />}
+                                            />
+                                            <Route
+                                                exact path="/news/create"
+                                                render={props => <NewsForm {...props} />}
+                                            />
+                                            <Route
+                                                exact path="/news/edit/:newsId(\d+)"
+                                                render={props => <NewsForm {...props} />}
+                                            />
+                                        </div>
+
+
+                                        <div className="eventsContainer">
+                                            <Route exact path="/events" render={
+                                                props => <EventList {...props} />
+                                            } />
+                                            <Route exact path="/events/create"
+                                                render={props => <EventForm {...props} />}
+                                            />
+                                            <Route exact path="/events/edit/:eventId(\d+)"
+                                                render={props => <EventForm {...props} />}
+                                            />
+                                        </div>
 
 
 
-
-                                    <Route exact path="/news"
-                                        render={props => <NewsList {...props} />}
-                                    />
-                                    <Route
-                                        exact path="/news/create"
-                                        render={props => <NewsForm {...props} />}
-                                    />
-                                    <Route
-                                        exact path="/news/edit/:newsId(\d+)"
-                                        render={props => <NewsForm {...props} />}
-                                    />
-
-                                    <Route exact path="/events" render={
-                                        props => <EventList {...props} />
-                                    } />
-                                    <Route exact path="/events/create"
-                                        render={props => <EventForm {...props} />}
-                                    />
-                                    <Route exact path="/events/edit/:eventId(\d+)"
-                                        render={props => <EventForm {...props} />}
-                                    />
-
-
-
-
-                                    <Route
-                                        exact
-                                        path="/tasks"
-                                        render={props => <TaskList {...props} />}
-                                    />
-                                    <Route
-                                        exact
-                                        path="/tasks/create"
-                                        render={props => <TaskForm {...props} />}
-                                    />
-                                    <Route
-                                        exact
-                                        path="/tasks/edit/:taskId(\d+)"
-                                        render={props => <TaskForm {...props} />}
-                                    />
-
+                                        <div className="taskContainer">
+                                            <Route
+                                                exact
+                                                path="/tasks"
+                                                render={props => <TaskList {...props} />}
+                                            />
+                                            <Route
+                                                exact
+                                                path="/tasks/create"
+                                                render={props => <TaskForm {...props} />}
+                                            />
+                                            <Route
+                                                exact
+                                                path="/tasks/edit/:taskId(\d+)"
+                                                render={props => <TaskForm {...props} />}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
                                 </EventProvider>
                             </MessageProvider>
                         </NewsProvider>

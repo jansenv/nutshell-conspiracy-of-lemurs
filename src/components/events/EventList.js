@@ -26,12 +26,14 @@ export default (props) => {
 
     return (
         <>
-            <h1>Events</h1>
+        <div className="eventsList">
+            <div>
+                <h1>Events</h1>
 
-            <button onClick={() => props.history.push("/events/create")}>
-                Add Event
-            </button>
-
+                <button onClick={() => props.history.push("/events/create")}>
+                    Add Event
+                </button>
+            </div>    
             <div className="events">
                 {
                     sortedEvents.map(event => {
@@ -39,6 +41,7 @@ export default (props) => {
                     })
                 }
             </div>
+        </div>
         </>
     )
 }
