@@ -50,36 +50,41 @@ let filteredUsers = []
   }
 }
 
-
-
-  return (
-    <>
-    
-    {/* <input placeholder="Search"
-      id="friendSearch"
-      onChange={SearchFunction}
-      type="text"
-      className="friendSearch"
-      placeholder="Search for friends here!" /> */}
-
+  if (nonFriendsArray.length === 0) {
+    return (
+      <>
       <h2>Add A Friend</h2>
       <div className="userList">
         <div className="friendsSearched" id="friendsSearched"></div>
         <div className="userNames">
-          {
-
-       nonFriendsArray.map(user => {
-              return <User key={user.id} user={user} {...props} />
-            })
-
-          }
+          You're literally friends with everyone.
         </div>
       </div>
       
     
     </>
-
-  )
+    )
+  } else {
+    return (
+      <>
+        <h2>Add A Friend</h2>
+        <div className="userList">
+          <div className="friendsSearched" id="friendsSearched"></div>
+          <div className="userNames">
+            {
+  
+         nonFriendsArray.map(user => {
+                return <User key={user.id} user={user} {...props} />
+              })
+  
+            }
+          </div>
+        </div>
+      </>
+  
+    )
+  }
+  
 
 
 }
