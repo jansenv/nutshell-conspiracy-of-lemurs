@@ -31,7 +31,9 @@ const [userArray, setNewUserArray] = useState([])
             When changing a state object or array, always create a new one
             and change state instead of modifying current one
         */
-        const newUserArray = Object.assign([], userArray)
+      //  I know this is very wrong!~~!!!
+        // const newUserArray = Object.assign([], userArray)
+        
         newUserArray = searchedUsers
         setNewUserArray(newUserArray)
     }
@@ -39,12 +41,12 @@ const [userArray, setNewUserArray] = useState([])
     const setDefaults = () => {
       
 
-            // setTask(searchedUsers)
+            setNewUserArray(searchedUsers)
         
     }
 
     useEffect(() => {
-        // setDefaults()
+        setDefaults()
     }, [userArray])
 
 
