@@ -13,8 +13,9 @@ export default (props) => {
     const handleControlledInputChange = (event) => {
         const newMessage = Object.assign({}, message)
         newMessage[event.target.name] = event.target.value
+        console.log("targetvalue", message)
         setMessage(newMessage)
-    }
+    } 
 
     const setDefaults = () => {
         if (editMode) {
