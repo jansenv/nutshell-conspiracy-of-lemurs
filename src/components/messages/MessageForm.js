@@ -46,8 +46,8 @@ export default (props) => {
     }
 
     return (
-        <form className="newsForm">
-            <h2 className="newsForm__title">{editMode ? "Edit Message" : "Add Message"}</h2>
+        <form className="messageForm">
+            <h2 className="messageForm__title">{editMode ? "Edit Message" : "Add Message"}</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="messageArea">Message: </label>
