@@ -1,24 +1,27 @@
+// Authored by Holden Parker
 import React from "react"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
+import NavLink from "./NavLink"
+
 
 export default (props) => {
     return (
         <ul className="navbar">
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Home</Link>
+            <li className="navbar__item">
+                <NavLink to="/" {...props}>Home</NavLink>    
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/news">News</Link>
+                <NavLink to="/news" {...props}>News</NavLink> 
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/events">Events</Link>
+                <NavLink to="/events" {...props}>Events</NavLink> 
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/tasks">Tasks</Link>
+                <NavLink to="/tasks" {...props}>Tasks</NavLink> 
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/friends">Add Friends</Link>
+                <NavLink to="/friends" {...props}>Add Friends</NavLink> 
             </li>
 
             {
@@ -38,3 +41,5 @@ export default (props) => {
         </ul>
     )
 }
+
+{/* <Link className="navbar__link" to="/">Home</Link> */}
