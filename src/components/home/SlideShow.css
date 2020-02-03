@@ -4,9 +4,9 @@
 
 }
 .slideshowimage{
-  max-width: 100% !important;
-  max-height: fit-content !important;
-
+  max-height: 500px !important;
+  max-width: fit-content !important;
+  
 }
 .slide-container{
   max-width: 95% !important;

@@ -39,7 +39,16 @@ const properties = {
           </div>
           <div className="each-slide">
             <div>
+            <img className="slideshowimage" src={require('../images/MoMo.jpg')}></img>
+            <br></br>
+
+              <span>MoMo</span>
+            </div>
+          </div>
+          <div className="each-slide">
+            <div>
             <img className="slideshowimage" src={require('../images/ILikeToMoveItLemur.jpg')}></img>
+            <br></br>
 
               <span>I like to MOVE IT! Lemur</span>
             </div>
@@ -47,6 +56,7 @@ const properties = {
           <div className="each-slide">
             <div>
             <img className="slideshowimage" src={require('../images/LeahLemur.jpg')}></img>
+            <br></br>
 
               <span>Leah Lemur</span>
             </div>
@@ -54,6 +64,7 @@ const properties = {
           <div className="each-slide">
             <div>
             <img className="slideshowimage" src={require('../images/Lemur.jpg')}></img>
+            <br></br>
 
               <span>Lemur</span>
             </div>
@@ -61,6 +72,7 @@ const properties = {
           <div className="each-slide">
             <div>
             <img className="slideshowimage" src={require('../images/LemurHat.jpg')}></img>
+            <br></br>
 
               <span>LemurHat</span>
             </div>
@@ -68,6 +80,7 @@ const properties = {
           <div className="each-slide">
             <div>
             <img className="slideshowimage" src={require('../auth/logo.png')}></img>
+            <br></br>
 
               <span>LemurSquad</span>
             </div>
