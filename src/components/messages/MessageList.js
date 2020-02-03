@@ -9,6 +9,7 @@ export default (props) => {
 
     return (
         <>
+        <div className="messageBox">
             <h4>Messages</h4>
             <div className="messages">
             <button onClick={() => props.history.push('/message/create')}>Add Message</button>
@@ -18,6 +19,7 @@ export default (props) => {
                     }).reverse()
                 }
             </div>
+        </div>
         </>
     )
 }
