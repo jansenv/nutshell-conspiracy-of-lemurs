@@ -10,7 +10,7 @@ export default ()=>{
 const slideImages = [
   './images/BridgeLemur.jpg',
   './images/ILikeToMoveItLemur.jpg',
-  './images/LeahLemur.jpg',
+  './images/LeahLemur.JPG',
   './images/Lemur.jpg',
   './images/LemurHat.jpg',
 ];
@@ -55,7 +55,7 @@ const properties = {
           </div>
           <div className="each-slide">
             <div>
-            <img className="slideshowimage" src={require('../images/LeahLemur.jpg')}></img>
+            <img className="slideshowimage" src={require('../images/LeahLemur.JPG')}></img>
             <br></br>
 
               <span>Leah Lemur</span>
