@@ -1,6 +1,6 @@
 # React Nutshell: The Information Dashboard
 
-![Screencap of the project](src/images/screenshot.png)
+![Screencap of the project](src/components/images/screenshot.png)
 
 ## Project Description
 
