@@ -6,6 +6,7 @@
 .slideshowimage{
   max-height: 500px !important;
   max-width: fit-content !important;
+  margin-left: 225px;
   
 }
 .slide-container{

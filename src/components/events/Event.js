@@ -53,7 +53,6 @@ export default ({ event, history }) => {
           <h3 className="event__name">{event.name}</h3>
           <div className="event__location">{event.location}</div>
           <div className="event__time">{new Date(event.timestamp).toLocaleDateString('en-US') + " " + timeFormat(event.timestamp)}</div>
-          <div className="event__poster">posted by {event.user.firstName} {event.user.lastName}</div>
           <div>{LoggedInUserButtons()}</div>
         </section>
     } else {
